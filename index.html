@@ -3,33 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Apple Stock Prices</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h2>APPLE'S STOCK MARKET</h2>
-    </header>
-    <div id="nav" class="container">
-        <ul>
-            <li><a href="default.asp">Home</a></li>
-            <li><a href="news.asp">My Order</a></li>
-            <li><a href="contact.asp">Fill Bank Details</a></li>
-            <li><a href="about.asp">Withdraw History</a></li>
-            <li><a href="about.asp">Recharge History</a></li>
-            <li><a href="about.asp">WhatsApp Group</a></li>
-            <li><a href="about.asp">Telegram Group</a></li>
-            <li><a href="about.asp">Change Password</a></li>
-            <li><a href="about.asp">Sign Out</a></li>
-        </ul>
+    <div class="sidebar">
+        <a href="index.html" class="active">Home</a>
+        <a href="#">My Order</a>
+        <a href="#">Fill Bank Details</a>
+        <a href="#">Withdraw History</a>
+        <a href="#">Recharge History</a>
+        <a href="#">Telegram Service</a>
+        <a href="#">Telegram Group</a>
+        <a href="#">WhatsApp Group</a>
+        <a href="#">Change Password</a>
+        <a href="#">Sign Out</a>
     </div>
-    <div id="content" class="container">
-        <div id="box1" class="disp">
-            BALANCE:
+    
+        
+    <div class="main-content">
+        <div class="header">
+            <h1>Apple's Stock Prices Website</h1>
         </div>
-        <div id="box2" class="disp">
-            SOM SHIT:
+        <div class="balance">
+            <h2>Wallet Balance: ₦1,000.00</h2>
+        </div>
+        <div class="assets">
+            <h2>Our Assets</h2>
+            <div class="asset">
+                <img src="https://via.placeholder.com/100" alt="Asset 1">
+                <div class="asset-info">
+                    <h3>Iphone XR</h3>
+                    <p>Price: ₦30,000</p>
+                    <p>Daily Profit: ₦2,000</p>
+                </div>
+                <button class="join-btn">Join Now</button>
+            </div>
+            <div class="asset">
+                <img src="https://via.placeholder.com/100" alt="Asset 2">
+                <div class="asset-info">
+                    <h3>Iphone XS</h3>
+                    <p>Price: ₦35,000</p>
+                    <p>Daily Profit: ₦2,200</p>
+                </div>
+                <button class="join-btn">Join Now</button>
+            </div>
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

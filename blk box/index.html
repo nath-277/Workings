@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Stock Price Tracker</h1>
+    </header>
+    <main>
+        <section class="balance">
+            <h2>Your Balance</h2>
+            <p id="balance">₦0.00</p>
+            <button id="recharge">Recharge</button>
+        </section>
+        <section class="stocks">
+            <h2>Available Stocks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Price</th>
+                        <th>Daily Profit</th>
+                        <th>Total Returns</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTableBody">
+                    <!-- Stock data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+        <section class="transactions">
+            <h2>Transactions</h2>
+            <ul id="transactionList">
+                <!-- Transaction history will be populated here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Stock Price Tracker</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
