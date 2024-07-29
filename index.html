@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="css/icofont-main/icofont.min.css" />
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
+    <header class="top">
+        <div>
+            <button id="btn" class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+        </div>
+            <div id="cc">
+                <a href="#"><img width="30px" src="images/ico.png" alt="Customer care"></a>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar collapsed" id="sidebar">
         <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
         <a href="index.html" class="active">
             <div>
@@ -55,6 +64,18 @@
         </a>
         <a href="#">
             <div>
+				<i class="icofont-live-support" style="float: left; width: 27px;"></i>
+			</div>
+			<div>Support Page</div>
+        </a>
+        <a href="#">
+            <div>
+				<i class="icofont-people" style="float: left; width: 27px;"></i>
+			</div>
+			<div>Referral Page</div>
+        </a>
+        <a href="#">
+            <div>
 				<i class="icofont-key" style="float: left; width: 27px;"></i>
 			</div>
 			<div>Change Password</div>
@@ -66,7 +87,7 @@
 			<div>Sign Out</div>
         </a>
     </div>
-    <div class="main-content" id="main-content">
+    <div class="main-content collapsed" id="main-content">
         <div class="header">
             <h1>Apple's Stock Prices Website</h1>
         </div>

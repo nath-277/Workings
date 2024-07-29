@@ -14,7 +14,8 @@ body {
     background-color: #333;
     padding-top: 20px;
     border-radius: 0 20px 20px 0;
-    transition: width 0.3s;
+    transition: width ease-in-out 0.3s;
+    overflow: auto;
 }
 .sidebar.collapsed {
     width: 115px;
@@ -31,7 +32,14 @@ body {
     border-radius: 15px;
     white-space: nowrap;
     overflow: hidden;
-    transition: padding 0.3s, font-size 0.3s;
+    transition: width ease-in-out 0.3s;
+}
+.sidebar button{
+    margin-left: 40px;
+    margin-right: 50px ;
+}
+.sidebar.collapsed button{
+    margin: auto;
 }
 .sidebar.collapsed a {
     padding: 15px 5px;
@@ -55,7 +63,7 @@ body {
 .main-content {
     margin-left: 260px;
     padding: 20px;
-    transition: margin-left 0.3s;
+    transition: margin ease-in-out 0.3s;
 }
 .main-content.collapsed {
     margin-left:115px;
@@ -100,7 +108,7 @@ body {
     margin-left: 20px;
 }
 .asset-info h3 {
-    margin: 0;
+    margin-top: 15px;
 }
 .join-btn {
     background-color: #4CAF50;
@@ -109,7 +117,67 @@ body {
     padding: 10px 20px;
     border-radius: 15px;
     cursor: pointer;
+    float: right;
+    
 }
 .join-btn:hover {
     background-color: #45a049;
 }
+@media screen and (max-width: 440px) {
+    body{
+        font-size: 0.8em;
+    }
+    .sidebar{
+        width: 100%;
+        border-radius: 0%;
+    }
+    .sidebar a {
+        margin-top: 12px;
+    }
+    .sidebar.collapsed{
+        display: none;
+    }
+    .main-content{
+        margin-left: 0;
+    }
+    .main-content.collapsed{
+        margin-left: 0;
+    }
+    .sidebar button{
+        margin-left: 10px;
+    }
+    .top{
+        background-color: #333;
+        height: 40px;
+    }
+    .top a{
+        text-decoration: none;
+    }
+    .join-btn{
+        padding: 5px 10px;
+        margin-right: -10px;
+    }
+    #cc{
+        display: block;
+        margin-right: 10px;
+        margin-top: 4px;
+        float: right;
+    }
+    #btn{
+       float: left;
+       background-color: #333;
+       color: white;
+       border: none;
+       font-size: 18px;
+       margin-top: 5px;
+    }
+  }
+  @media screen and (max-width: 390px){
+    body{
+        font-size: 0.7em;
+    }
+    .join-btn{
+        padding: 5px 10px;
+        margin-right: -25px;
+    }
+  }
