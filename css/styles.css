@@ -41,8 +41,10 @@ body {
 .sidebar.collapsed button{
     margin: auto;
 }
-.sidebar.collapsed a {
-    padding: 15px 5px;
+.sidebar.collapsed a .ico{
+    display: none;
+}
+div:not(.sidebar.collapsed) .colico{
     font-size: 0;
 }
 .sidebar a:hover {
@@ -76,14 +78,29 @@ body {
     color: white;
 }
 .balance {
+    display: inline-block;
     background-color: #333;
     color: white;
     padding: 20px;
     margin: 20px 0;
     border-radius: 15px;
     text-align: center;
+    width: 45vh;
+    overflow: auto;
+}
+.username {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    text-align: center;
+    width: 45vh;
+    overflow: auto;
 }
 .assets {
+    clear: both;
     background-color: white;
     padding: 20px;
     border-radius: 15px;
@@ -127,12 +144,21 @@ body {
     body{
         font-size: 0.8em;
     }
+    .username {
+        width: 10em;
+        height: auto;
+
+    }
+    .balance{
+        width: 12em;
+        height: auto;
+    }
     .sidebar{
         width: 100%;
         border-radius: 0%;
     }
     .sidebar a {
-        margin-top: 12px;
+        margin-bottom: 15px;
     }
     .sidebar.collapsed{
         display: none;
