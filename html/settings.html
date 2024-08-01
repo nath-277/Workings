@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Stock Prices</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/icofont/icofont.css" />
-    <link rel="stylesheet" href="css/icofont-main/icofont.min.css" />
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/icofont/icofont.css" />
+    <link rel="stylesheet" href="../css/icofont-main/icofont.min.css" />
 </head>
 <body>
     <header class="top">
@@ -14,13 +14,13 @@
             <button id="btn" class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
         </div>
             <div id="cc">
-                <a href="#"><img width="30px" src="images/ico.png" alt="Customer care"></a>
+                <a href="#"><img width="30px" src="../images/ico.png" alt="Customer care"></a>
             </div>
         </div>
     </header>
     <div class="sidebar collapsed" id="sidebar">
         <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
-        <a href="index.html" class="active" title="Home">
+        <a href="../index.html" title="Home">
             <div class="ico">
 				<i class="icofont-home" style="float: left; width: 27px;"></i>
 			</div>
@@ -29,7 +29,7 @@
 				<i class="icofont-home" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/order.html" title="Orders">
+        <a href="order.html" title="Orders">
             <div class="ico">
 				<i class="icofont-ui-cart" style="float: left; width: 27px;"></i>
 			</div>
@@ -38,7 +38,7 @@
 				<i class="icofont-ui-cart" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/account-details.html" title="Account Details">
+        <a href="account-details.html" title="Account Details">
             <div class="ico">
 				<i class="icofont-bank-alt" style="float: left; width: 27px;"></i>
 			</div>
@@ -47,7 +47,7 @@
 				<i class="icofont-bank-alt" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/account-history.html" title="Fund History">
+        <a href="account-history.html" title="Fund History">
             <div class="ico">
 				<i class="icofont-ui-clock" style="float: left; width: 27px;"></i>
 			</div>
@@ -56,7 +56,7 @@
 				<i class="icofont-ui-clock" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/Withdrawl.html" title="Withdraw">
+        <a href="Withdrawl.html" title="Withdraw">
             <div class="ico">
 				<i class="icofont-dollar" style="float: left; width: 27px;"></i>
 			</div>
@@ -65,7 +65,7 @@
 				<i class="icofont-dollar" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/referral.html" title="Referral">
+        <a href="referral.html" title="Referral">
             <div class="ico">
 				<i class="icofont-people" style="float: left; width: 27px;"></i>
 			</div>
@@ -101,7 +101,7 @@
 				<i class="icofont-support" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="html/settings.html" title="Account Settings">
+        <a href="settings.html" class="active" title="Account Settings">
             <div class="ico">
 				<i class="icofont-settings-alt" style="float: left; width: 27px;"></i>
 			</div>
@@ -110,7 +110,7 @@
 				<i class="icofont-settings-alt" style="width: 27px; margin-left: 30%;"></i>
 			</div>
         </a>
-        <a href="login.html" title="Sign Out">
+        <a href="../login.html" title="Sign Out">
             <div class="ico">
 				<i class="icofont-logout" style="float: left; width: 27px;"></i>
 			</div>
@@ -120,44 +120,13 @@
 			</div>
         </a>
     </div>
-    
+
     <div class="main-content collapsed" id="main-content">
-        <div class="header">
-            <h1>Apple's Stock Prices Website</h1>
-        </div>
-        <div style="display: inline-block; width: 95%;">
-            <div class="balance">
-                <h2 class="balance-item">Balance: ₦<span id="wallet-balance"></span>.00</h2>
-                <a id="fund-btn" href="html/fund-wallet.html"><h2>Fund</h2></a>
-            </div>
-        </div>
-        <div style="display: block; width: 95%;">
-            <div class="username">
-                <h2>User ID: Nath_277</h2>
-            </div>
-        </div>
-        <div class="assets">
-            <h2>Our Assets</h2>
-            <div class="asset">
-                <img src="https://via.placeholder.com/100" alt="Asset 1">
-                <div class="asset-info">
-                    <h3>Iphone XR</h3>
-                    <p>Price: ₦30,000</p>
-                    <p>Daily Profit: ₦1,500</p>
-                </div>
-                <button class="join-btn" onclick="addToOrders('Iphone XR', 30000, 1500)">Join Now</button>
-            </div>
-            <div class="asset">
-                <img src="https://via.placeholder.com/100" alt="Asset 2">
-                <div class="asset-info">
-                    <h3>Iphone XS</h3>
-                    <p>Price: ₦35,000</p>
-                    <p>Daily Profit: ₦2,000</p>
-                </div>
-                <button class="join-btn" onclick="addToOrders('Iphone XS', 35000, 2000)">Join Now</button>
-            </div>
+       <div class="header">
+            <h1>Account Settings</h1>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    
+    <script src="../js/script.js"></script>
 </body>
 </html>

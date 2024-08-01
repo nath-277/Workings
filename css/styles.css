@@ -1,9 +1,17 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: medium;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.top{
+    display: none;
 }
 .sidebar {
     height: 98vh;
@@ -41,7 +49,7 @@ body {
 .sidebar.collapsed button{
     margin: auto;
 }
-.sidebar.collapsed a .ico{
+.sidebar.collapsed .ico{
     display: none;
 }
 div:not(.sidebar.collapsed) .colico{
@@ -59,7 +67,7 @@ div:not(.sidebar.collapsed) .colico{
     padding: 15px;
     text-align: left;
 }
-.active{
+.sidebar a.active{
     background-color: #4CAF50;
 }
 .main-content {
@@ -76,53 +84,60 @@ div:not(.sidebar.collapsed) .colico{
     border-radius: 15px;
     text-align: center;
     color: white;
+    margin-bottom: 10px;
 }
 .balance {
     display: inline-block;
     background-color: #333;
     color: white;
     padding: 20px;
-    margin: 20px 0;
+    margin: 1dvb 0;
     border-radius: 15px;
-    text-align: center;
     overflow: auto;
+    width: 100%;
+}
+.balance-item{
+    float: left;
 }
 .username {
     display: inline-block;
     background-color: #333;
     color: white;
     padding: 20px;
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 15px;
     text-align: center;
     overflow: auto;
+    width: 45%;
+    margin-right: 10px;
 }
-.assets {
+.assets, .order-content {
     clear: both;
     background-color: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.asset {
+.asset, .order-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
-.asset:last-child {
+.asset:last-child, .order-content:last-child, .order-item:last-child {
     border-bottom: none;
 }
-.asset img {
+.asset img{
     width: 100px;
     border-radius: 15px;
 }
-.asset-info {
+.asset-info, .order-details {
     flex: 1;
     margin-left: 20px;
 }
-.asset-info h3 {
+.asset-info h3, .order-details h3 {
     margin-top: 15px;
 }
 .join-btn {
@@ -135,8 +150,81 @@ div:not(.sidebar.collapsed) .colico{
     float: right;
     
 }
+.cancel-btn {
+    background: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    float: right;
+}
+.go-on-btn{
+    background: #49a73d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    float: right;
+}
 .join-btn:hover {
     background-color: #45a049;
+}
+.cancel-btn:hover {
+    background: #ee3131;
+}
+#fund-btn{
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    float: right;
+    padding: 0px 20px 0px 20px;
+}
+#account-details{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 3%;
+}
+input{
+    margin-left: 3%;
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+#amt, #acct-num, #bank{
+    margin-left: 3%;
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 90%;
+}
+#amt1{
+    font-size: 18px;
+}
+#submit{
+    width: 40%;
+    border-radius: 15px;
+    border: none;
+    background-color: #4CAF50 ;
+    color: white;
+    padding: 7.5px 0px 20px 0px;
+    margin-left: 33%;
+}
+#link-acct{
+    color: blue;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+    margin-right: 45px;
 }
 @media screen and (max-width: 440px) {
     body{
@@ -148,7 +236,7 @@ div:not(.sidebar.collapsed) .colico{
 
     }
     .balance{
-        width: 12em;
+        width: 95%;
         height: auto;
     }
     .sidebar{
@@ -173,11 +261,16 @@ div:not(.sidebar.collapsed) .colico{
     .top{
         background-color: #333;
         height: 40px;
+        display: block;
     }
     .top a{
         text-decoration: none;
     }
     .join-btn{
+        padding: 5px 10px;
+        margin-right: -10px;
+    }
+    .cancel-btn{
         padding: 5px 10px;
         margin-right: -10px;
     }
@@ -194,6 +287,18 @@ div:not(.sidebar.collapsed) .colico{
        border: none;
        font-size: 18px;
        margin-top: 5px;
+    }
+    #amt, #acct-num, #bank{
+        margin-top: 20px;
+        margin-left: 2%;
+        width: 85%;
+    }
+    #link-acct{
+        margin-top: 19px;
+        margin-right: 25px;
+    }
+    #amt1{
+        bottom: 2%;
     }
   }
   @media screen and (max-width: 390px){
