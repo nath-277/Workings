@@ -129,7 +129,7 @@ div:not(.sidebar.collapsed) .colico{
 .asset:last-child, .order-content:last-child, .order-item:last-child {
     border-bottom: none;
 }
-.asset img{
+.asset img, .order-item img{
     width: 100px;
     border-radius: 15px;
 }
@@ -148,7 +148,6 @@ div:not(.sidebar.collapsed) .colico{
     border-radius: 15px;
     cursor: pointer;
     float: right;
-    
 }
 .cancel-btn {
     background: #ff4c4c;

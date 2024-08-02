@@ -5,13 +5,13 @@ function toggleSidebar() {
     mainContent.classList.toggle('expanded');
 }
 
-function addToOrders(name, price, dailyProfit, imgUrl) {
+function addToOrders(name, price, dailyProfit) {
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
     let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000; // Default wallet balance
 
     if (walletBalance >= price) {
         walletBalance -= price;
-        orders.push({ name, price, dailyProfit, imgUrl });
+        orders.push({ name, price, dailyProfit });
         localStorage.setItem('orders', JSON.stringify(orders));
         localStorage.setItem('walletBalance', walletBalance);
         document.getElementById('wallet-balance').textContent = walletBalance;
@@ -45,28 +45,24 @@ function displayOrders() {
 
     if (orders.length === 0) {
         orderContent.innerHTML = `
-            <h2 class="no-order-text">No available order
-            <button class="go-on-btn"><a href="../index.html">Go On</a></button></h2>
+            <img src="https://via.placeholder.com/100" alt="No Order" class="no-order-img">
+            <p class="no-order-text">No available order</p>
+            <button class="go-on-btn">Go On</button>
         `;
     } else {
         orderContent.innerHTML = orders.map((order, index) => `
             <div class="order-item">
-                <img src="${order.imgUrl}" alt="${order.name}" class="order-img">
+                <img src="https://via.placeholder.com/100" alt="${order.name}" class="order-img">
                 <div class="order-details">
-                    <h3>${order.name}</h3>
+                    <p>${order.name}</p>
                     <p>Price: ₦${order.price}</p>
                     <p>Daily Profit: ₦${order.dailyProfit}</p>
+                    <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel Order</button>
                 </div>
-                <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel Order</button>
             </div>
         `).join('');
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    displayOrders();
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
     displayOrders();

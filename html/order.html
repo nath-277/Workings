@@ -122,39 +122,15 @@
     </div>
 
     <div class="main-content collapsed" id="main-content">
-       <div class="header">
+        <div class="header">
             <h1>My Order</h1>
         </div>
-            <div class="order-content" id="order-content">
-            </div>
+        <h2 style="overflow: auto; background-color: #333; text-align: center; width: auto; color: white; border-radius: 15px; margin-left: 30%; margin-right: 30%; padding: 20px;">
+            Balance: ₦<span id="wallet-balance"></span>.00
+        </h2>
+        <div class="order-content" id="order-content"></div>
     </div>
 
     <script src="../js/script.js"></script>
-
-    <script>
-         document.addEventListener('DOMContentLoaded', function() {
-            const orders = JSON.parse(localStorage.getItem('orders')) || [];
-            const orderContent = document.getElementById('order-content');
-
-            if (orders.length === 0) {
-                orderContent.innerHTML = `
-                    <h2 class="no-order-text">No available order
-                    <button class="go-on-btn"><a href="../index.html">Go On</a></button></h2>
-                `;
-            } else {
-                orderContent.innerHTML = orders.map(order => `
-                    <div class="order-item">
-                        <img src="https://via.placeholder.com/100" alt="${order.name}" class="order-img">
-                        <div class="order-details">
-                            <h3>${order.name}</h3>
-                            <p>Price: ₦${order.price}</p>
-                            <p>Daily Profit: ₦${order.dailyProfit}</p>
-                        </div>
-                        <button class="cancel-btn" onclick="cancelOrder(index)">Cancel</button>
-                    </div>
-                `).join('');
-            }
-        });
-    </script>
 </body>
 </html>
