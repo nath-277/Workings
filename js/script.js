@@ -2,7 +2,7 @@ function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content');
     sidebar.classList.toggle('collapsed');
-    mainContent.classList.toggle('expanded');
+    mainContent.classList.toggle('collapsed');
 }
 
 function addToOrders(name, price, dailyProfit, imgUrl) {
