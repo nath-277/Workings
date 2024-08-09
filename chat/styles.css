@@ -1,109 +1,64 @@
 body {
-    display: flex;
     font-family: Arial, sans-serif;
 }
 
-.sidebar {
-    width: 250px;
-    background: #222;
-    color: #fff;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    overflow-y: auto;
-    transition: all 0.3s ease;
+#navbar {
+    background-color: #333;
+    overflow: hidden;
 }
 
-.sidebar a {
-    color: #bbb;
+#navbar .menu {
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar .menu a {
+    color: white;
+    padding: 14px 20px;
     text-decoration: none;
-    display: block;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    text-align: center;
 }
 
-.sidebar a:hover,
-.sidebar a.active {
-    background: #444;
-    color: #fff;
-}
-
-.sidebar .toggle-btn {
-    background: none;
+#navbar .menu-toggle {
+    background-color: #333;
+    color: white;
     border: none;
-    color: #fff;
-    font-size: 20px;
     cursor: pointer;
-    margin-bottom: 20px;
+    padding: 14px 20px;
 }
 
-.main-content {
-    margin-left: 250px;
+#content {
     padding: 20px;
-    width: calc(100% - 250px);
-    transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
-.header {
-    background: #000;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-.balance {
+.wallet-info {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-}
-
-.balance-item {
-    background: #444;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-
-.assets {
-    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .asset {
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .asset img {
     margin-right: 20px;
-    border-radius: 4px;
 }
 
-.asset-details {
-    flex: 1;
+.page {
+    display: none;
 }
 
-.asset-details p {
-    margin: 5px 0;
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
 }
 
-.join-btn, .cancel-btn {
-    background: #00bfff;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.tabs button {
+    margin-right: 10px;
 }
 
-.cancel-btn {
-    background: #ff4c4c;
+.tab-content {
+    display: none;
 }

@@ -7,7 +7,7 @@ function toggleSidebar() {
 
 function addToOrders(name, price, dailyProfit, imgUrl) {
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000; // Default wallet balance
+    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 100000; // Default wallet balance
 
     if (walletBalance >= price) {
         walletBalance -= price;
@@ -23,7 +23,7 @@ function addToOrders(name, price, dailyProfit, imgUrl) {
 
 function cancelOrder(index) {
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000; // Default wallet balance
+    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 100000; // Default wallet balance
 
     const order = orders[index];
     if (order) {
@@ -32,6 +32,7 @@ function cancelOrder(index) {
         localStorage.setItem('orders', JSON.stringify(orders));
         localStorage.setItem('walletBalance', walletBalance);
         document.getElementById('wallet-balance').textContent = walletBalance;
+        alert('Order cancelled successfully!');
         displayOrders(); // Refresh the order list without reloading the page
     }
 }
@@ -39,7 +40,7 @@ function cancelOrder(index) {
 function displayOrders() {
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
     const orderContent = document.getElementById('order-content');
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000;
+    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 100000;
 
     document.getElementById('wallet-balance').textContent = walletBalance;
 
@@ -57,17 +58,19 @@ function displayOrders() {
                     <p>Price: ₦${order.price}</p>
                     <p>Daily Profit: ₦${order.dailyProfit}</p>
                 </div>
-                <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel Order</button>
+                <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel</button>
             </div>
         `).join('');
     }
+    
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     displayOrders();
 });
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    displayOrders();
-});
+function showTab(tab) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(t => t.style.display = 'none');
+    document.getElementById(tab).style.display = 'block';
+}

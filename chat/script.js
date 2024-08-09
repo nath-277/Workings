@@ -1,69 +1,81 @@
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('main-content');
-    sidebar.classList.toggle('collapsed');
-    mainContent.classList.toggle('expanded');
+document.addEventListener('DOMContentLoaded', () => {
+    loadOrders();
+    updateWalletBalance();
+});
+
+function toggleMenu() {
+    const menu = document.querySelector('#navbar .menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 
-function addToOrders(name, price, dailyProfit) {
-    let orders = JSON.parse(localStorage.getItem('orders')) || [];
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000; // Default wallet balance
+function navigateTo(page) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(p => p.style.display = 'none');
+    document.getElementById(page).style.display = 'block';
+}
+
+function placeOrder(name, price, imageUrl) {
+    const walletBalanceElem = document.getElementById('wallet-balance');
+    let walletBalance = parseFloat(walletBalanceElem.textContent.replace('₦', '').replace(',', ''));
 
     if (walletBalance >= price) {
         walletBalance -= price;
-        orders.push({ name, price, dailyProfit });
+        walletBalanceElem.textContent = `₦${walletBalance.toLocaleString()}`;
+
+        const order = { name, price, imageUrl };
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders.push(order);
         localStorage.setItem('orders', JSON.stringify(orders));
-        localStorage.setItem('walletBalance', walletBalance);
-        document.getElementById('wallet-balance').textContent = walletBalance;
-        alert('Order added successfully!');
+
+        loadOrders();
     } else {
-        alert('Insufficient wallet balance!');
+        alert('Insufficient balance.');
     }
 }
 
-function cancelOrder(index) {
+function loadOrders() {
+    const ordersList = document.getElementById('orders-list');
+    ordersList.innerHTML = '';
+
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000; // Default wallet balance
-
-    const order = orders[index];
-    if (order) {
-        walletBalance += order.price;
-        orders.splice(index, 1);
-        localStorage.setItem('orders', JSON.stringify(orders));
-        localStorage.setItem('walletBalance', walletBalance);
-        document.getElementById('wallet-balance').textContent = walletBalance;
-        displayOrders(); // Refresh the order list without reloading the page
-    }
-}
-
-function displayOrders() {
-    const orders = JSON.parse(localStorage.getItem('orders')) || [];
-    const orderContent = document.getElementById('order-content');
-    let walletBalance = parseInt(localStorage.getItem('walletBalance')) || 1000;
-
-    document.getElementById('wallet-balance').textContent = walletBalance;
-
-    if (orders.length === 0) {
-        orderContent.innerHTML = `
-            <img src="https://via.placeholder.com/100" alt="No Order" class="no-order-img">
-            <p class="no-order-text">No available order</p>
-            <button class="go-on-btn">Go On</button>
-        `;
-    } else {
-        orderContent.innerHTML = orders.map((order, index) => `
-            <div class="order-item">
-                <img src="https://via.placeholder.com/100" alt="${order.name}" class="order-img">
-                <div class="order-details">
-                    <p>${order.name}</p>
-                    <p>Price: ₦${order.price}</p>
-                    <p>Daily Profit: ₦${order.dailyProfit}</p>
-                    <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel Order</button>
-                </div>
+    orders.forEach(order => {
+        const orderElem = document.createElement('div');
+        orderElem.classList.add('order');
+        orderElem.innerHTML = `
+            <img src="${order.imageUrl}" alt="${order.name}" style="width: 50px; height: 50px;">
+            <div>
+                <p>${order.name}</p>
+                <p>Price: ₦${order.price.toLocaleString()}</p>
+                <button onclick="cancelOrder('${order.name}')">Cancel Order</button>
             </div>
-        `).join('');
+        `;
+        ordersList.appendChild(orderElem);
+    });
+}
+
+function cancelOrder(name) {
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    const orderIndex = orders.findIndex(order => order.name === name);
+
+    if (orderIndex > -1) {
+        const order = orders[orderIndex];
+        let walletBalance = parseFloat(document.getElementById('wallet-balance').textContent.replace('₦', '').replace(',', ''));
+        walletBalance += order.price;
+        document.getElementById('wallet-balance').textContent = `₦${walletBalance.toLocaleString()}`;
+
+        orders.splice(orderIndex, 1);
+        localStorage.setItem('orders', JSON.stringify(orders));
+        loadOrders();
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    displayOrders();
-});
+function updateWalletBalance() {
+    const walletBalance = parseFloat(localStorage.getItem('walletBalance')) || 1000;
+    document.getElementById('wallet-balance').textContent = `₦${walletBalance.toLocaleString()}`;
+}
+
+function showTab(tab) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(t => t.style.display = 'none');
+    document.getElementById(tab).style.display = 'block';
+}

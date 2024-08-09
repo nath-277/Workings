@@ -125,15 +125,46 @@
         <div class="header">
             <h1>Apple's Stock Prices Website</h1>
         </div>
-        <div style="display: inline-block; width: 95%;">
+        <div style="display: inline-block; width: 96%;">
             <div class="balance">
-                <h2 class="balance-item">Balance: ₦<span id="wallet-balance"></span>.00</h2>
-                <a id="fund-btn" href="html/fund-wallet.html"><h2>Fund</h2></a>
+                <h1 style="bottom: 0px;" class="balance-item"><span style="color: lightblue;"></span><i class="icofont-wallet" style="width: 35px; font-size: 28px; "></i> ₦<span id="wallet-balance"></span>.00</h1>
+                <a id="wit-btn" href="html/withdrawl.html"><span><i class="icofont-arrow-right"></i> WITHDRAW </span></a>
+                <a id="fund-btn" href="html/fund-wallet.html"><span><i class="icofont-arrow-left"></i> DEPOSIT </span></a>
             </div>
-        </div>
-        <div style="display: block; width: 95%;">
-            <div class="username">
-                <h2>User ID: Nath_277</h2>
+            <div class="balance">
+                <div id="testm">
+                    <h2 id="test" >Testimonies :</h2>
+                    <marquee style="padding: 3px 5px 3px 5px;" direction="">
+                        <div>
+                            <span class="testm">
+                                <span>080*****374 Just invested 450,000 NGN</span> |  
+                                <span>090*****836 Just withdrew 348,600 NGN</span> |  
+                                <span>080*****407 Just withdrew 406,900 NGN</span> |  
+                                <span>091*****904 Just invested 30,000 NGN</span> |  
+                                <span>090*****926 Just withdrew 197,500 NGN</span> |  
+                                <span>080*****586 Just withdrew 485,600 NGN</span> |  
+                                <span>091*****140 Just invested 15,000 NGN</span> |  
+                                <span>091*****509 Just withdrew 96,900 NGN</span> |  
+                                <span>090*****085 Just withdrew 117,800 NGN</span> |  
+                                <span>080*****612 Just withdrew 33,700 NGN</span> |  
+                                <span>081*****639 Just withdrew 293,800 NGN</span> |  
+                                <span>090*****047 Just withdrew 100,000 NGN</span> |  
+                                <span>081*****749 Just invested 15,000 NGN</span> |  
+                                <span>080*****823 Just invested 10,000 NGN</span> |  
+                                <span>091*****283 Just invested 450,000 NGN</span> |  
+                                <span>080*****654 Just invested 1,000,000 NGN</span> |  
+                                <span>070*****610 Just withdrew 365,700 NGN</span> |  
+                                <span>090*****456 Just invested 300,000 NGN</span> |  
+                                <span>081*****479 Just withdrew 65,400 NGN</span> |  
+                                <span>081*****105 Just withdrew 477,000 NGN</span> |  
+                            </span>
+                        </div>
+                    </marquee>
+                </div>
+                <div id="usr">
+                    <p id="usrid">User ID</p>
+                    <p id="user">Nath_277</p>
+                </div>
             </div>
         </div>
         <div class="assets">
@@ -144,6 +175,7 @@
                     <h3>Iphone XR</h3>
                     <p>Price: ₦30,000</p>
                     <p>Daily Profit: ₦1,500</p>
+                    <p>Total</p>
                 </div>
                 <button class="join-btn" onclick="addToOrders('Iphone XR', 30000, 1500, 'https://www.apple.com/newsroom/images/product/iphone/standard/iPhone_XR_red-back_09122018_carousel.jpg.large.jpg')">Join Now</button>
             </div>

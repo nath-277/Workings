@@ -122,9 +122,40 @@
     </div>
 
     <div class="main-content collapsed" id="main-content">
-       <div class="header">
+        <div class="header">
             <h1>Account History</h1>
         </div>
+        <div class="tabs">
+            <button id="tab1" onclick="showTab('all')">All</button>
+            <button id="tab2" onclick="showTab('pending')">Pending</button>
+            <button id="tab3" onclick="showTab('success')">Success</button>
+            <button id="tab4" onclick="showTab('failed')">Failed</button>
+        </div>
+        <div style="margin-top: 20px;" id="all" class="tab-content">
+            <div class="order-content" id="order-content">
+                <!--content gooes here-->
+                <h1>All Transactions</h1>
+            </div>
+        </div>
+        <div id="pending" class="tab-content" style="display: none; margin-top: 20px;">
+            <div class="order-content" id="order-content">
+                <!--content gooes here-->
+                <h1>Pending Transactions</h1>
+            </div>
+        </div>
+        <div id="success" class="tab-content" style="display: none; margin-top: 20px;">
+            <div class="order-content" id="order-content">
+                <!--content gooes here-->
+                <h1>Successful Transactions</h1>
+            </div>
+        </div>
+        <div id="failed" class="tab-content" style="display: none; margin-top: 20px;">
+            <div class="order-content" id="order-content">
+                <!--content gooes here-->
+                <h1>Failed Transactions</h1>
+            </div>
+        </div>
+    </div>
     </div>
     
     <script src="../js/script.js"></script>
